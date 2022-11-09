@@ -3,12 +3,17 @@ import {
   Roboto_500Medium,
   Roboto_700Bold,
   useFonts,
-} from "@expo-google-fonts/roboto";
-import { NativeBaseProvider, StatusBar } from "native-base";
-import { Loading } from "./src/components/Loading";
-import { AuthContextProvider } from "./src/contexts/AuthContext";
-import { SignIn } from "./src/screens/SignIn";
-import { THEME } from "./src/styles/theme";
+} from '@expo-google-fonts/roboto';
+import { NativeBaseProvider, StatusBar } from 'native-base';
+import { Loading } from './src/components/Loading';
+import { AuthContextProvider } from './src/contexts/AuthContext';
+
+import { NewPool } from './src/screens/NewPool';
+import { Pools } from './src/screens/Pools';
+import { FindPool } from './src/screens/FindPool';
+import { SignIn } from './src/screens/SignIn';
+
+import { THEME } from './src/styles/theme';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -25,6 +30,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
+
         {fontsLoaded ? <SignIn /> : <Loading />}
       </AuthContextProvider>
     </NativeBaseProvider>
