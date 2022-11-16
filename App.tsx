@@ -8,12 +8,8 @@ import { NativeBaseProvider, StatusBar } from 'native-base';
 import { Loading } from './src/components/Loading';
 import { AuthContextProvider } from './src/contexts/AuthContext';
 
-import { NewPool } from './src/screens/NewPool';
-import { Pools } from './src/screens/Pools';
-import { FindPool } from './src/screens/FindPool';
-import { SignIn } from './src/screens/SignIn';
-
 import { THEME } from './src/styles/theme';
+import { Routes } from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -31,7 +27,7 @@ export default function App() {
           translucent
         />
 
-        {fontsLoaded ? <SignIn /> : <Loading />}
+        {fontsLoaded ? <Routes /> : <Loading />}
       </AuthContextProvider>
     </NativeBaseProvider>
   );
